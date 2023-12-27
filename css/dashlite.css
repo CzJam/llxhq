@@ -4449,7 +4449,7 @@ svg { height: 100%; max-width: 100%; }
 
 .alert-dismissible .close:hover { color: currentColor; }
 
-.alert-dismissible .close:after { font-family: "Nioicon"; content: ""; font-size: 1.1rem; }
+.alert-dismissible .close:after {  content: ""; font-size: 1.1rem; }
 
 .alert-light, .alert-lighter, .alert-gray { border-color: #e5e9f2; color: #526484; }
 
@@ -4547,7 +4547,7 @@ a.alert:hover { color: currentColor; }
 
 .breadcrumb-pipe .breadcrumb-item + .breadcrumb-item::before { content: '|'; }
 
-.breadcrumb-arrow .breadcrumb-item + .breadcrumb-item::before { font-family: "Nioicon"; content: ""; }
+.breadcrumb-arrow .breadcrumb-item + .breadcrumb-item::before {  content: ""; }
 
 .breadcrumb-item.active:not(:only-child) { font-weight: 400; }
 
@@ -4869,7 +4869,7 @@ a:hover .btn-trigger:before { opacity: 1; height: 120%; width: 120%; }
 
 .dropdown-title { font-weight: 500; color: #364a63; }
 
-[class*="dropdown-indicator"]:after { border: none !important; font-family: "Nioicon"; vertical-align: middle; content: ""; margin-left: 0.25rem; line-height: 1; display: inline-flex; align-items: center; font-size: 14px; }
+[class*="dropdown-indicator"]:after { border: none !important;  vertical-align: middle; content: ""; margin-left: 0.25rem; line-height: 1; display: inline-flex; align-items: center; font-size: 14px; }
 
 .dropup [class*="dropdown-indicator"]:after { content: ""; }
 
@@ -5134,7 +5134,7 @@ a:hover .btn-trigger:before { opacity: 1; height: 120%; width: 120%; }
 
 .form-control-select-multiple .custom-select option:last-child, .form-control-select-multiple div.dataTables_wrapper div.dataTables_length select option:last-child, div.dataTables_wrapper div.dataTables_length .form-control-select-multiple select option:last-child { margin-bottom: -0.5rem; }
 
-.form-control-select:after { font-family: "Nioicon"; content: ""; pointer-events: none; position: absolute; display: inline-flex; justify-content: center; align-items: center; right: 0; top: 50%; transform: translateY(-50%); width: calc(1rem + 12px); height: calc(1rem + 12px); }
+.form-control-select:after {  content: ""; pointer-events: none; position: absolute; display: inline-flex; justify-content: center; align-items: center; right: 0; top: 50%; transform: translateY(-50%); width: calc(1rem + 12px); height: calc(1rem + 12px); }
 
 textarea.no-resize { resize: none; }
 
@@ -5172,7 +5172,7 @@ textarea.textarea-auto { min-height: 0; }
 
 .custom-control-label::before, .custom-control-label::after { top: 0; }
 
-.custom-control-label:after { display: inline-flex; align-items: center; justify-content: center; background-image: none !important; font-family: "Nioicon"; color: #fff; opacity: 0; }
+.custom-control-label:after { display: inline-flex; align-items: center; justify-content: center; background-image: none !important;  color: #fff; opacity: 0; }
 
 .custom-checkbox .custom-control-label:after { content: ""; }
 
@@ -5520,9 +5520,9 @@ input[type="radio"]:checked ~ label { cursor: default; }
 .toast .close { display: inline-flex; margin-right: -0.5rem; margin-left: 0.5rem; }
 
 
-@font-face { font-family: "Nioicon"; src: url("../fonts/Nioicon.eot"); src: url("../fonts/Nioicon.eot#iefix") format("embedded-opentype"), url("../fonts/Nioicon.ttf") format("truetype"), url("../fonts/Nioicon.woff") format("woff"), url("../fonts/Nioicon.svg#Nioicon") format("svg"); font-weight: normal; font-style: normal; font-display: block; }
+/*@font-face {  src: url("../fonts/Nioicon.eot"); src: url("../fonts/Nioicon.eot#iefix") format("embedded-opentype"), url("../fonts/Nioicon.ttf") format("truetype"), url("../fonts/Nioicon.woff") format("woff"), url("../fonts/Nioicon.svg#Nioicon") format("svg"); font-weight: normal; font-style: normal; font-display: block; }*/
 
-.ni { /* use !important to prevent issues with browser extensions that change fonts */ font-family: "Nioicon" !important; speak: never; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.ni { /* use !important to prevent issues with browser extensions that change fonts */  !important; speak: never; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .ni-centos:before { content: ""; }
 
@@ -7854,7 +7854,7 @@ body.nav-shown { overflow: hidden; }
 
 .nk-menu-toggle { position: relative; }
 
-.nk-menu-toggle:after { position: absolute; font-family: "Nioicon"; top: 50%; right: 1.25rem; content: ""; transform: translateY(-50%); font-size: 1rem; color: #8094ae; transition: transform .3s, color .1s; }
+.nk-menu-toggle:after { position: absolute;  top: 50%; right: 1.25rem; content: ""; transform: translateY(-50%); font-size: 1rem; color: #8094ae; transition: transform .3s, color .1s; }
 
 .is-dark .nk-menu-toggle:after, .is-theme .nk-menu-toggle:after { color: rgba(255, 255, 255, 0.4); }
 
@@ -8128,7 +8128,7 @@ li { list-style: none; }
 
 .accordion-icon { position: absolute; right: 1rem; top: 50%; font-size: 1rem; color: #364a63; transform: translateY(-50%); transition: rotate 0.4s; width: 20px; height: 20px; text-align: center; line-height: 20px; }
 
-.accordion-icon:before { content: ""; font-family: "Nioicon"; transition: 0.4s; }
+.accordion-icon:before { content: "";  transition: 0.4s; }
 
 .accordion-head.collapsed .accordion-icon:before { content: ""; }
 
@@ -8220,7 +8220,7 @@ li { list-style: none; }
 
 .list li:not(:last-child) { padding-bottom: .5rem; }
 
-.list li:before { position: absolute; left: 0; font-size: 14px; line-height: 1.5rem; font-family: "Nioicon"; content: ""; }
+.list li:before { position: absolute; left: 0; font-size: 14px; line-height: 1.5rem;  content: ""; }
 
 .list li span { color: #8094ae; }
 
@@ -8298,7 +8298,7 @@ li { list-style: none; }
 
 .link-pd-sm, .link-tidy.sm li, .link-list-plain.sm a { padding: 6px 1rem; }
 
-.link-act-check:after, .link-check li.active > a:after, .link-check li a.active:after, .link-list-opt li.active > a:after, .link-list-opt a.active:after { content: ""; position: absolute; top: 50%; transform: translateY(-50%); right: 1rem; font-family: "Nioicon"; }
+.link-act-check:after, .link-check li.active > a:after, .link-check li a.active:after, .link-list-opt li.active > a:after, .link-list-opt a.active:after { content: ""; position: absolute; top: 50%; transform: translateY(-50%); right: 1rem;  }
 
 .link-check { padding: .5rem 0; }
 
@@ -8362,7 +8362,7 @@ li { list-style: none; }
 
 .link-list-menu a { position: relative; display: flex; align-items: center; padding: .75rem 1.25rem; font-weight: 500; color: #526484; transition: all .4s; line-height: 1.3rem; }
 
-.link-list-menu a:after { position: absolute; font-size: 1rem; font-family: "Nioicon"; content: ""; right: 1.25rem; color: #8094ae; transition: .3s ease; }
+.link-list-menu a:after { position: absolute; font-size: 1rem;  content: ""; right: 1.25rem; color: #8094ae; transition: .3s ease; }
 
 .link-list-menu a .icon { font-size: 1.125rem; width: 1.75rem; opacity: .8; color: #8094ae; margin-top: -2px; }
 
@@ -8452,7 +8452,7 @@ li { list-style: none; }
 
 .nk-upload-response .message + .icon { margin-left: 0.5rem; }
 
-.nk-upload-response .icon:after { font-family: "Nioicon"; }
+.nk-upload-response .icon:after {  }
 
 .nk-upload-response .icon + .message { margin-left: 0.5rem; }
 
@@ -9418,7 +9418,7 @@ body.toggle-shown { overflow: hidden; }
 
 .change { line-height: 1; }
 
-.change .sign { font-family: "Nioicon"; }
+.change .sign {  }
 
 .change .sign:before { content: ""; }
 
