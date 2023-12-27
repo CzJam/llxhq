@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>下载测速</title>
     <link rel="stylesheet" href="css/dashlite.css">
-	<link rel="stylesheet" href="css/style.css?v=20220626">
+	<link rel="stylesheet" href="css/style.css?v=202220626">
 	<link rel="manifest" href="manifest.json">
 	<script type="text/javascript">
-	if (navigator.serviceWorker != null) {
-		navigator.serviceWorker.register('sw-pwa.js?20220628')
-		.then(function(registration) {
-			console.log('Registered events at scope: ', registration.scope);
-		});
-	}
+// 	if (navigator.serviceWorker != null) {
+// 		navigator.serviceWorker.register('sw-pwa.js?20220628')
+// 		.then(function(registration) {
+// 			console.log('Registered events at scope: ', registration.scope);
+// 		});
+// 	}
 	</script>
 
 
@@ -63,7 +63,7 @@
                 </div>
                 </div> 
                 <div class="form-group" style="margin-top:20px">
-                <label class="form-label" style="font-size:28px"><b>线程数</b></label>
+                <label class="form-label" style="font-size:26px"><b>线程数<a style="font-size:14px">（若设备性能不足，过量的线程会导致浏览器卡顿，影响测试准确性）</a></b></label>
                 <div class="form-control-wrap number-spinner-wrap">
                     <button class="btn btn-icon btn-outline-primary number-spinner-btn number-minus" @click="if(set.thread>1)set.thread--"><em class="icon ni ni-minus"></em></button>
                     <input type="number" style="font-size:18px;font-weight:Bold" readonly="readonly" class="form-control number-spinner" min="1" max="16" v-model="set.thread">
@@ -73,7 +73,7 @@
                 <button style="margin:20px 0;padding:20px;font-size:24px" class="btn btn-dim btn-outline-secondary btn-block card-link" @click="run">
                 {{set.status?'停止':'开始'}}
             </button>
-            <p>本项目基于<a href="https://github.com/uu6/llxhq"> https://github.com/uu6/llxhq </a>二改。(开源地址：<a href="https://github.com/CzJam/llxhq">https://github.com/CzJam/llxhq</a>)。仅保留核心功能，提高加载和使用效率。
+            <p>本项目基于<a href="https://github.com/uu6/llxhq"> https://github.com/uu6/llxhq </a>二改(开源地址：<a href="https://github.com/CzJam/llxhq">https://github.com/CzJam/llxhq</a>)。仅保留核心功能，提高加载和使用效率。
         </div>
     </div>
 </div>
@@ -104,7 +104,7 @@ new Vue({
             output: '',
             infinite: true,
             status: false,
-            thread: 8,
+            thread: 4,
         },
         tasks: [],
         speed: '0.00B/s',
@@ -221,27 +221,8 @@ new Vue({
     },
 });
 
-// 网络延迟输出
- function testLatency() {
-      var resultElement = document.getElementById('result');
-     var urlToTest = 'https://sqimg.qq.com/qq_product_operations/nettest/index2.html';
-      function updateResult(latency) {
-        resultElement.innerText = '实时网络延迟：' + latency + ' 毫秒';
-      }
-     var xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          var endTime = new Date().getTime();
-          var latency = endTime - startTime;
-          updateResult(latency);
-        }
-      };
 
-      var startTime = new Date().getTime();
-      xhr.open('GET', urlToTest, true);
-      xhr.send();
-    }
-     setInterval(testLatency, 3000);  
+     
 </script>
 
   
@@ -259,24 +240,6 @@ return false;
 }
 }
 </script>  
-
-<!-- 网络延时输出 -->
-  <script>
-   
-  </script>
-
-
-
-
-<!-- 流量统计代码  20231117 放到最后延迟加载，避免页面长时间无响应  -->
-	<script src="//api.vv1234.cn/ip/api.php?action=getip&code=js&token=test&from=llxhq"></script>
-	<script src="//v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-	<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-	<script>LA.init({id: "JjhvoI5bfYbANJBZ",ck: "JjhvoI5bfYbANJBZ",autoTrack:true,hashMode:true})</script>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4745983596040533"
-	     crossorigin="anonymous"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114909353-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -284,14 +247,5 @@ return false;
     
       gtag('config', 'UA-114909353-1');
     </script>
-
-
-<!--<script src="//api.vv1234.cn/js/fuqiang.js?20220629"></script>-->
-
-
-<script></script>  
-<script></script>  
-
-
 </body>
 </html>
