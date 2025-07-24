@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>下载测速</title>
-	<link rel="stylesheet" href="css/style.css?v=202220626">
+	<link rel="stylesheet" href="css/style.css?v=26">
 	<link rel="manifest" href="manifest.json">
 	<script type="text/javascript">
 
@@ -14,6 +14,10 @@
 </head>
 <body class="nk-body npc-invest bg-lighter " style="cursor:pointer">
 <style>
+@font-face {
+    font-family:font2;
+    src: url(fonts/digit.ttf);
+}
 .stat {
     width: 100%;
     column-gap: 1rem;
@@ -27,27 +31,29 @@
 }
 .stat-value {
     white-space: nowrap;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: bold;
-    line-height: 2.5rem
+    font-family:font2;
 }
+
+
 </style>
 <div class="container-xl" id="app" style="text-align:center" >
 
     <div style="font-size:20px;">
-        <div class="stat-title">下载速率</div>
+        <div class="stat-title">实时下载速率</div>
         <div class="stat-value" >{{speed}}</div><br>
     </div>
     <div style="font-size:20px;">
-        <div class="stat-title">已使用流量</div>
-        <div class="stat-value">{{changeFilesize(waste)+" MB, "+(changeFilesize(waste)/1024).toFixed(2)+" GB"}}</div><br>
+        <div class="stat-title">已用流量</div>
+        <div class="stat-value">{{changeFilesize(waste)+" MB = "+(changeFilesize(waste)/1024).toFixed(2)+" GB"}}</div><br>
     </div>
     <div style="font-size:20px;">
-        <div class="stat-title">运行时长</div>
+        <div class="stat-title">运行时长与平均速率</div>
         <div class="stat-value">{{secToTime(spend)}}</div><br>
     </div>
     <p style="font-size:20px;color:red;text-align:center">注意：测试为不限时运行，请手动点击停止！</p> 
-    <button style="padding:2%;font-size:24px;text-align:center;"  @click="run">
+    <button style="padding:2%;font-size:24px;text-align:center;font-family:font2;"  @click="run">
         {{set.status?'停止':'开始测试'}}
     </button>
             <p style="margin-bottom:1px">本项目基于<a href="https://github.com/uu6/llxhq"> https://github.com/uu6/llxhq </a>二改。开源地址：<a href="https://github.com/CzJam/llxhq">https://github.com/CzJam/llxhq</a>。仅保留核心功能，提高加载速度。</p>
@@ -79,7 +85,7 @@ new Vue({
             thread: 32,
         },
         tasks: [],
-        speed: '0 B/s, 0 Mbps',
+        speed: '0 MB/s = 0 Mbps',
         spend: 0,
         waste: 0,
         timer: null,
@@ -168,7 +174,12 @@ new Vue({
                 }
                 t += sec + 's'
             }
-            return t
+            if(this.spend==0){
+                return "00s, 0 MB/s"
+            }else{
+                return t+", "+(this.changeFilesize(this.waste)/this.spend).toFixed(0)+" MB/s"
+            }
+            
         },
         changeFilesize: (filesize) => {
             return (parseInt(filesize) / (1024 * 1024)).toFixed(0)
@@ -176,7 +187,7 @@ new Vue({
 
         changeDownloadSpeed(filesize) {
             filesize = this.changeFilesize(filesize);
-            return filesize+" MB/s, "+filesize*8+" Mbps"
+            return filesize+" MB/s = "+filesize*8+" Mbps"
         }
     },
 });
